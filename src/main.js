@@ -23,7 +23,7 @@ import './plugins/vuex-router-sync';
 import './plugins/bootstrap';
 import './plugins/font-awesome';
 import './plugins/vue-resource';
-import './plugins/vue-charts';
+// import './plugins/vue-charts';
 import './plugins/vue-modal';
 import './plugins/bulma';
 

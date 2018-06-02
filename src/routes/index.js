@@ -20,7 +20,7 @@ export default [
 
   {
     path: '/test',
-    name: 'test',
+    name: 'dorin',
     component: () => import('@/pages/test/Index'),
 
       // If the user needs to be authenticated to view this page

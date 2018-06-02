@@ -42,7 +42,7 @@
             </a>
           </router-link>
           <router-link
-                  :to="{ name: 'test' }"
+                  :to="{ name: 'dorin' }"
                   active-class="active"
                   class="nav-item"
                   tag="li"

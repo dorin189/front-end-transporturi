@@ -74,7 +74,7 @@
     import VLayout from '@/layouts/Default';
     import VCard from '@/components/Card';
     import axios from 'axios';
-    import vmodal from 'vue-js-modal';
+    // import vmodal from 'vue-js-modal';
 
     const GET_PARC_AUTO = '/parc-auto';
     const POST_PARC_AUTO = '/parc-auto';
