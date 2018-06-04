@@ -129,7 +129,6 @@
         beforeRouteEnter(to, from, next) {
             axios.get(process.env.API_LOCATION + GET_COMENZI)
                 .then(response => {
-                    console.log(response.data);
                     next(vm => (vm.posts = response.data))
                 })
         },
