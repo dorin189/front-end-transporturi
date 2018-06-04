@@ -13,49 +13,92 @@
                     <thead>
                     <tr>
                         <th>
-                            Nume Firma
+                            Nume Client
                         </th>
                         <th>
-                            Persoana Contact
+                            Adresa Client
                         </th>
                         <th>
-                            Email
+                            Telefon Client
                         </th>
                         <th>
-                            Numar telefon
+                            Nume Destinatar
+                        </th>
+                        <th>
+                            Adresa Destinatar
+                        </th>
+                        <th>
+                            Telefon Destinatar
+                        </th>
+                        <th>
+                            Nume Produs
+                        </th>
+                        <th>
+                            Nume Sofer
+                        </th>
+                        <th>
+                            Actualizeaza Comanda
+                        </th>
+                        <th>
+                            Sterge Comanda
                         </th>
                     </tr>
                     </thead>
                     <tbody>
-                    <!--<tr v-for="post in posts" :key="post.id">-->
-                        <!--<td>-->
-                            <!--{{post.nume}}-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--{{post.persoana_contact}}-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--{{post.email}}-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--{{post.numar_telefon}}-->
-                        <!--</td>-->
-                    <!--</tr>-->
+                    <tr v-for="post in posts" :key="post.id">
+                        <td>
+                            {{post.nume_client}}
+                        </td>
+                        <td>
+                            {{post.adresa_client}}
+                        </td>
+                        <td>
+                            {{post.telefon_client}}
+                        </td>
+                        <td>
+                            {{post.nume_destinatar}}
+                        </td>
+                        <td>
+                            {{post.adresa_destinatar}}
+                        </td>
+                        <td>
+                            {{post.telefon_destinatar}}
+                        </td>
+                        <td>
+                            {{post.nume_produs}}
+                        </td>
+                        <td v-if="post.is_asigned == 0">
+                            <select @change="onChange($event.target.value)">
+                                <option>Sofer</option>
+                                <option v-for="sofer in post.soferi">{{sofer.nume}} {{sofer.prenume}}</option>
+                            </select>
+                        </td>
+                        <td v-if="post.is_asigned == 1">
+                            {{post.nume_sofer}}
+                        </td>
+
+                        <td v-if="post.is_asigned == 0">
+                            <button type="button" class="btn btn-info" @click="updateComanda(post.id)">Actualizeaza</button>
+                        </td>
+                        <td v-if="post.is_asigned == 1">
+
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" @click="deleteComanda(post)">Sterge</button>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
-            <!--<div slot="footer">-->
-            <!--Made with love by Vivid Web-->
-            <!--</div>-->
+
         </v-card>
     </v-layout>
 </template>
 <script>
     /* ============
-     * Account Index Page
+     * Comenzi Index Page
      * ============
      *
-     * Page where the user can view the account information.
      */
     /* eslint-disable */
     import VLayout from '@/layouts/Default';
@@ -64,8 +107,10 @@
     import vmodal from 'vue-js-modal';
     import VueGoogleAutocomplete from 'vue-google-autocomplete';
 
-    const GET_TRANSPORTATORI = '/transportatori';
-
+    const GET_COMENZI = '/comenzi';
+    const GET_SOFERI_NAME = '/soferi/info';
+    const POST_COMENZI_UPDATE = '/comenzi/update';
+    const DELETE_COMENDA = '/comenzi/delete';
     export default {
 
         /**
@@ -76,12 +121,15 @@
         data() {
             return {
                 posts: [],
+                soferi: [],
+                selected: null,
                 isVisible: false,
             }
         },
         beforeRouteEnter(to, from, next) {
-            axios.get(process.env.API_LOCATION + GET_TRANSPORTATORI)
+            axios.get(process.env.API_LOCATION + GET_COMENZI)
                 .then(response => {
+                    console.log(response.data);
                     next(vm => (vm.posts = response.data))
                 })
         },
@@ -93,6 +141,43 @@
             openModal() {
                 this.isVisible = true;
             },
+            onChange(value) {
+                this.$emit('sofer', value);
+                this.selected = value;
+            },
+            updateComanda(id) {
+                var data = {
+                    "id": id,
+                    "is_asigned": 1,
+                    "nume_sofer" : this.selected,
+                }
+
+
+                axios.post(process.env.API_LOCATION + POST_COMENZI_UPDATE, data)
+                    .then(function (response) {
+                        window.location.reload(true);
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                            // errors = error.response.data.errors;
+                            console.log(vm.errors);
+                        }
+                    });
+            },
+            deleteComanda(post) {
+                var id = post.id;
+                this.posts.splice(post, 1);
+                axios.delete(process.env.API_LOCATION + DELETE_COMENDA + "/" + id, id)
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                            // errors = error.response.data.errors;
+                            console.log(vm.errors);
+                        }
+                    });
+            }
 
         },
         components: {
@@ -136,7 +221,8 @@
 
                         axios.post(process.env.API_LOCATION + '/comenzi', this.date)
                             .then(function (response) {
-                                console.log(response);
+                                document.getElementById('is-active').style.display = 'none';
+                                window.location.reload(true);
                             })
                             .catch(function (error) {
                                 if (error.response) {
@@ -172,17 +258,13 @@
                     VueGoogleAutocomplete
                 },
                 template: `
-             <div class="modal is-active">
+             <div class="modal modal-comenzi is-active" id="is-active">
                         <div class="modal-background"></div>
                         <div class="modal-content">
                         <header class="modal-card-head">
                         <p class="modal-card-title">Adauga Comanda</p>
                         </header>
                          <section class="modal-card-body">
-
-
-
-
                           <form @submit.prevent="add(comanda)">
                                 <div class="row">
                                      <div class="form-group col-md-6">
