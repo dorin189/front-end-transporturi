@@ -113,13 +113,17 @@
 
         methods: {
             calculate(id) {
-                this.posts.splice(id, 1);
+                var vm = this;
                 axios.get(process.env.API_LOCATION + GET_COMENZI_BY_DRIVE + id)
                     .then(function (response) {
-                        localStorage.setItem('aaa', JSON.stringify(response.data));
+                        console.log(response);
+                        if(response.data) {
+                            localStorage.setItem('aaa', JSON.stringify(response.data));
+                            vm.getComenziSofer();
+                        }
                     })
-
-
+            },
+            getComenziSofer() {
                 var a = localStorage.getItem('aaa');
                 var vm = this;
                 var locations = JSON.parse(a);
@@ -132,6 +136,7 @@
                     scope['destination' + i] = new google.maps.LatLng(locations[i].comand.lat_adresa_destinatar, locations[i].comand.lng_adresa_destinatar);
                 }
                 var origin1 = new google.maps.LatLng(locations[0].comand.lat_adresa_client, locations[0].comand.lng_adresa_client);
+                console.log("location" + locations[0].comand);
                 var service = new google.maps.DistanceMatrixService();
 
                 function getDestionation() {
@@ -156,7 +161,6 @@
                             vm.shortDistance = [];
                             var origins = response.originAddresses;
                             vm.origin = origins;
-                            console.log(vm.origin);
                             var destinations = response.destinationAddresses;
                             for (var i = 0; i < origins.length; i++) {
                                 var results = response.rows[i].elements;
@@ -205,7 +209,6 @@
                             return arr;
                         }
 
-                        console.log(this.origin[0]);
                         var start = vm.origin[0];
                         var startTransformToString = start.replace(/\s*,\s*/g , "+");
 
@@ -225,6 +228,7 @@
                         vm.isGenerate = true;
                     });
             },
+
             sendData(info) {
                 axios.post(process.env.API_LOCATION + POST_INFO, info)
                     .then(function (response) {
