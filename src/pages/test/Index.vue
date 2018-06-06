@@ -95,7 +95,6 @@
         axios.get(process.env.API_LOCATION + GET_COMENZI_INFO)
             .then(response => {
                 locatii = response.data;
-
                 setMarkers(map, locatii);
             });
     }

@@ -70,7 +70,7 @@
                         <td v-if="post.is_asigned == 0">
                             <select @change="onChange($event.target.value)">
                                 <option>Sofer</option>
-                                <option v-for="sofer in post.soferi">{{sofer.nume}} {{sofer.prenume}}</option>
+                                <option v-for="sofer in post.soferi">{{sofer.id}} {{sofer.nume}} {{sofer.prenume}}</option>
                             </select>
                         </td>
                         <td v-if="post.is_asigned == 1">
@@ -78,7 +78,7 @@
                         </td>
 
                         <td v-if="post.is_asigned == 0">
-                            <button type="button" class="btn btn-info" @click="updateComanda(post.id)">Actualizeaza</button>
+                            <button type="button" class="btn btn-info" @click="updateComanda(post)">Actualizeaza</button>
                         </td>
                         <td v-if="post.is_asigned == 1">
 
@@ -124,6 +124,7 @@
                 soferi: [],
                 selected: null,
                 isVisible: false,
+                soferId: null,
             }
         },
         beforeRouteEnter(to, from, next) {
@@ -142,14 +143,17 @@
             },
             onChange(value) {
                 this.$emit('sofer', value);
-                this.selected = value;
+                var sofer = value.split(" ");
+                this.soferId = sofer[0];
+                this.selected = sofer[1] + " " + sofer[2];
             },
-            updateComanda(id) {
+            updateComanda(post) {
                 var data = {
-                    "id": id,
+                    "id": post.id,
                     "is_asigned": 1,
                     "nume_sofer" : this.selected,
-                }
+                    "sofer_id": this.soferId
+                };
 
 
                 axios.post(process.env.API_LOCATION + POST_COMENZI_UPDATE, data)
@@ -216,7 +220,6 @@
                            telefonDestinatar: comanda.telefonDestinatar,
                            numeProdus: comanda.numeProdus
                         }
-                        console.log(this.date);
 
                         axios.post(process.env.API_LOCATION + '/comenzi', this.date)
                             .then(function (response) {

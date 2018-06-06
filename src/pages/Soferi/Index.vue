@@ -136,49 +136,50 @@
                         }
                     },
                     template: `
-             <div class="modal is-active">
-                        <div class="modal-background"></div>
-                        <div class="modal-content">
-                        <header class="modal-card-head">
-                        <p class="modal-card-title">Adauga Sofer</p>
-                        </header>
-                         <section class="modal-card-body">
-                          <form @submit.prevent="add(transportator)">
-                               <div class="form-group">
-                                <label for="formGroupExampleInput">Nume</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nume " v-model='sofer.nume'>
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupExampleInput2">Prenume</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Prenume" v-model='sofer.prenume'>
-                              </div>
-                               <div class="form-group">
-                                <label for="formGroupExampleInput3">Email</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Email" v-model='sofer.email'>
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupExampleInput4">Numar telefon</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Numar Telefon" v-model='sofer.numarTelefon'>
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupExampleInput5">Data nasterii</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Data nasterii" v-model='sofer.dataNasterii'>
-                              </div>
-                              <div class="form-group">
-                                <label for="formGroupExampleInput6">Categorie Permis</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput6" placeholder="Categorie Permis" v-model='sofer.categoriePermis'>
-                              </div>
-                              <div class="form-group">
-                                 <button class="btn btn-primary">Save</button>
-                              </div>
-                            </form>
-                         </section>
+                         <div class="modal is-active">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-content">
+                                    <header class="modal-card-head">
+                                    <p class="modal-card-title">Adauga Sofer</p>
+                                    </header>
+                                     <section class="modal-card-body">
+                                      <form @submit.prevent="add(transportator)">
+                                           <div class="form-group">
+                                            <label for="formGroupExampleInput">Nume</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nume " v-model='sofer.nume'>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="formGroupExampleInput2">Prenume</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Prenume" v-model='sofer.prenume'>
+                                          </div>
+                                           <div class="form-group">
+                                            <label for="formGroupExampleInput3">Email</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Email" v-model='sofer.email'>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="formGroupExampleInput4">Numar telefon</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Numar Telefon" v-model='sofer.numarTelefon'>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="formGroupExampleInput5">Data nasterii</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Data nasterii" v-model='sofer.dataNasterii'>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="formGroupExampleInput6">Categorie Permis</label>
+                                            <input type="text" class="form-control" id="formGroupExampleInput6" placeholder="Categorie Permis" v-model='sofer.categoriePermis'>
+                                          </div>
+                                          <div class="form-group">
+                                          <div class="form-group">
+                                             <button class="btn btn-primary">Save</button>
+                                          </div>
+                                        </form>
+                                     </section>
 
-                        </div>
-                        <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
-                        <h1>{{ errors}}</h1>
-             </div>
-        `
+                                    </div>
+                                    <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
+                                    <h1>{{ errors}}</h1>
+                         </div>
+                        `
                 }
             },
         },

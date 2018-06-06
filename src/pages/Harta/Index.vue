@@ -3,32 +3,77 @@
 
     <v-layout>
       <div>
-          <ul>
-              <li>Sofer: Iosifescu Dorin</li>
-              <li>Masina: Vw Skoda</li>
-              <li>
-                  <button @click="calculate()">Calculeaza Routa</button>
-              </li>
-              <li>
-                  <button>Trimite email catre sofer</button>
-              </li>
-          </ul>
-          <div style="width: 100%" v-if="me">
-          <embed id="myFrame" style="width: 100%; height: 400px" :src="
-          'https://www.google.com/maps/embed/v1/directions?key=AIzaSyAGWiEqLEilt-TAYuij2_wA5CXBHwofvE8&origin='
-          + startingPoint[0].position.lat + ','
-          + startingPoint[0].position.lng +
-          '&waypoints=' + startingPoint[2].position.lat + ','
-          + startingPoint[2].position.lng +
-          '&destination=' + startingPoint[1].position.lat + ','
-          + startingPoint[1].position.lng"
-          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          <!--<ul>-->
+              <!--<li>Sofer: Iosifescu Dorin</li>-->
+              <!--<li>Masina: Vw Skoda</li>-->
+              <!--<li>-->
+                  <!--<button @click="calculate()" class="btn btn-info" style="margin-top: 10px;" v-show="!isGenerate">Calculeaza Routa</button>-->
+              <!--</li>-->
+              <!--<form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">-->
+                  <!--<div class="row">-->
+                      <!--<div class="form-group" style="margin-right: 30px">-->
+                          <!--<label for="name" style="margin-right: 10px">Link harta:</label>-->
+                          <!--<input type="text" class="form-control" id="name" v-model="info.link">-->
+                      <!--</div>-->
+                      <!--<div class="form-group" style="margin-right: 30px">-->
+                          <!--<label for="km" style="margin-right: 10px">Km:</label>-->
+                          <!--<input type="text" class="form-control" id="km" v-model="info.km">-->
+                      <!--</div>-->
+                      <!--<button class="btn btn-success" @click="sendData(info)">Trimite email catre sofer</button>-->
+                  <!--</div>-->
+              <!--</form>-->
+          <!--</ul>-->
+          <!--<div style="width: 100%">-->
+              <!--<iframe id="myFrame" class="myIframe" ref="myIframe" style="width: 100%; height: 340px" :src="googleMapsEmbeded"-->
+                      <!--frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>-->
+
+          <!--</div>-->
+
+          <table class="table table-striped">
+              <thead>
+              <tr>
+                  <th>
+                      Nume Sofer
+                  </th>
+                  <th>
+                      Prenume Sofer
+                  </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr v-for="post in posts" :key="post.id">
+                  <td>
+                      {{post.nume}}
+                  </td>
+                  <td>
+                      {{post.prenume}}
+                  </td>
+                  <td>
+                      <button @click="calculate(post.id)" class="btn btn-info" style="margin-top: 10px;">Calculeaza Routa</button>
+                  </td>
+                  <td>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
+          <form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">
+              <div class="row">
+                  <div class="form-group" style="margin-right: 30px">
+                      <label for="name" style="margin-right: 10px">Link harta:</label>
+                      <input type="text" class="form-control" id="name" v-model="info.link">
+                  </div>
+                  <div class="form-group" style="margin-right: 30px">
+                      <label for="km" style="margin-right: 10px">Km:</label>
+                      <input type="text" class="form-control" id="km" v-model="info.km">
+                  </div>
+                  <button class="btn btn-success" @click="sendData(info)">Trimite email catre sofer</button>
+              </div>
+          </form>
+          <div style="width: 100%">
+              <iframe id="myFrame" class="myIframe" ref="myIframe" style="width: 100%; height: 340px" :src="googleMapsEmbeded"
+                      frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
           </div>
-
-
-
-
-
       </div>
     </v-layout>
 </template>
@@ -36,99 +81,76 @@
 <script>
     /* eslint-disable */
     import VLayout from '@/layouts/Default';
-    import VueGoogleAutocomplete from 'vue-google-autocomplete';
     import axios from 'axios';
 
     const GET_COMENZI_IS_ORDER = '/comenzi/is-order';
+    const GET_COMENZI_BY_DRIVE = '/comenzi/get-comenzi/';
+    const POST_INFO = '/test';
 
     export default {
         name: 'planificare',
-        name: 'google-map',
-        props: ['name'],
 
             data() {
                 return {
                     address: '',
                     adrese: [],
-                    // center: { lat: 62, lng: 10.0 },
-                    // markers: [
-                    //     {
-                    //         position: {
-                    //             lat: 1.3776586,
-                    //             lng: 103.7662378
-                    //         },
-                    //     },
-                    //     {
-                    //         position: {
-                    //             lat: 61.75,
-                    //             lng: 11.0
-                    //         },
-                    //     }
-                    //
-                    // ],
-                    // places: [],
-                    // currentPlace: null
-                    startingPoint: [
-                        {
-                            position: {
-                                lat: 44.3815122,
-                                lng: 26.152377200000046
-                            }
-                        },
-                        {
-                            position: {
-                                lat: 45.71879329999999,
-                                lng: 25.775300399999992
-                            }
-                        },
-                        {
-                            position: {
-                                lat: 47.1673149,
-                                lng: 27.58322750000002
-                            }
-
-                        }
-                    ],
-                    me: true,
                     distance: null,
                     shortDistance: [],
                     posts: {},
-
+                    googleMapsEmbeded: null,
+                    origin: [],
+                    isGenerate: false,
+                    link: {}
                }
        },
 
         beforeRouteEnter: function (to, from, next) {
             axios.get(process.env.API_LOCATION + GET_COMENZI_IS_ORDER)
-                .then(response =>
-                    next( vm => localStorage.setItem('aaa', JSON.stringify(response.data))
-                    )
-                )
+                .then(response => {
+                    next(vm => (vm.posts = response.data))
+                })
         },
 
 
+
+        // beforeRouteEnter: function (to, from, next) {
+        //     axios.get(process.env.API_LOCATION + GET_COMENZI_IS_ORDER)
+        //         .then(response =>
+        //             next( vm => localStorage.setItem('aaa', JSON.stringify(response.data),
+        //                 console.log(response.data))
+        //             )
+        //         )
+        // },
+
+
         methods: {
-            calculate() {
+            calculate(id) {
+                this.posts.splice(id, 1);
+                axios.get(process.env.API_LOCATION + GET_COMENZI_BY_DRIVE + id)
+                    .then(function (response) {
+                        localStorage.setItem('aaa', JSON.stringify(response.data));
+                    })
+
+
                 var a = localStorage.getItem('aaa');
                 var vm = this;
                 var locations = JSON.parse(a);
-                console.log(locations.length);
+
+                console.log(locations[0].comand);
                 var size = Object.keys(this.posts).length;
                 var pozition = [];
                 var scope = {};
                 for(var i = 1 ; i <= locations.length-1; i++) {
-                    scope['destination' + i] = new google.maps.LatLng(locations[i].lat_adresa_destinatar, locations[i].lng_adresa_destinatar);
+                    scope['destination' + i] = new google.maps.LatLng(locations[i].comand.lat_adresa_destinatar, locations[i].comand.lng_adresa_destinatar);
                 }
-                var origin1 = new google.maps.LatLng(locations[0].lat_adresa_client, locations[0].lng_adresa_client);
+                var origin1 = new google.maps.LatLng(locations[0].comand.lat_adresa_client, locations[0].comand.lng_adresa_client);
                 var service = new google.maps.DistanceMatrixService();
 
-
-                console.log(scope);
                 function getDestionation() {
                     var lungime = Object.keys(scope).length;
                     var arr = [];
                     for(var i = 1; i <= lungime; i++) {
                         arr.push(scope['destination' + i]);
-
                     }
                     return arr;
                 }
@@ -143,23 +165,18 @@
                         avoidTolls: false
                     }, (response,status) =>{
                         if (status == 'OK') {
+                            vm.shortDistance = [];
                             var origins = response.originAddresses;
-                            // console.log(origins);
+                            this.origin.push(origins);
                             var destinations = response.destinationAddresses;
-                            var a  = response;
-                            console.log(a);
                             for (var i = 0; i < origins.length; i++) {
                                 var results = response.rows[i].elements;
                                 for (var j = 0; j < results.length; j++) {
                                     var element = results[j];
-                                    // console.log(element);
                                     var distance = element.distance.text;
-
-
                                     vm.distance = distance;
                                     vm.shortDistance.push(element.distance.value);
                                     var duration = element.duration.text;
-                                    // console.log(duration);
                                     var from = origins[i];
                                     var to = destinations[j];
                                 }
@@ -169,113 +186,74 @@
                             return a - b ;
                         })
 
-                        console.log(vm.shortDistance);
+                        var destinationOrder = [];
+                        for(var e = 0 ; e < vm.shortDistance.length; e++) {
+                            for(var a = 0; a < results.length; a++) {
+                                if(vm.shortDistance[e] == results[a].distance.value) {
+                                    this.totalKm += results[a].distance.value;
+                                    destinationOrder.push(destinations[a]);
+                                }
+                            }
+                        }
 
+
+                        /**
+                         *  generate dinamic link for google maps
+                         * @returns {Array}
+                         */
+                        function wayPoints() {
+                            var arr = [];
+                            for(var i =0 ; i < destinationOrder.length - 1; i++) {
+                                if(i == 0) {
+                                    arr.push("&waypoints=" + destinationOrder[i] + "|");
+                                } else if(i < destinationOrder.length - 2) {
+                                    arr.push(destinationOrder[i] + "|")
+                                }
+                                else {
+                                    arr.push(destinationOrder[i]);
+                                }
+                            }
+                            return arr;
+                        }
+
+                        var start = this.origin;
+                        var startA = JSON.stringify(start[0]);
+                        var startTransform = startA.join("");
+                        console.log(startTransform);
+                        var startTransformToString = start.replace(/\s*,\s*/g , "+");
+
+                        var points = wayPoints();
+                        var transformToString = points.join("");
+                        var waypointsTransformToString = transformToString.replace(/\s*,\s*/g , "+");
+
+                        var destinationLength = destinationOrder.length;
+                        var destination = destinationOrder[destinationLength-1];
+                        var destinationTransformToString = destination.replace(/\s*,\s*/g , "+");
+
+                        this.googleMapsEmbeded = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyBEHv_obRsxXQwTou7mzUh6p9fQcwtv0vk" +
+                            "&origin=" + startTransformToString +
+                            waypointsTransformToString +
+                            "&destination=" + destinationTransformToString + "&avoid=tolls|highways&zoom=6"
+
+                        vm.isGenerate = true;
                     });
-
-
-
-
-
             },
-            /**
-             * When the location found
-             * @param {Object} addressData Data of the found location
-             * @param {Object} placeResultData PlaceResult object
-             * @param {String} id Input container ID
-             */
-            getAddressData(addressData, placeResultData, id) {
-                console.log(placeResultData);
-                var obj = {};
-                obj = addressData;
-                this.adrese.push(obj);
-                // console.log(this.adrese);
-                // this.startingPoint.position = {};
-                // this.startingPoint.position.lat = this.adrese.latitude;
-                //
-                // this.startingPoint.position.lng = this.adrese.longitude;
-            },
+            sendData(info) {
+                axios.post(process.env.API_LOCATION + POST_INFO, info)
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        if (error.response) {
+                            // errors = error.response.data.errors;
+                            console.log(vm.errors);
+                        }
+                    });
+            }
         },
 
         components: {
             VLayout,
-            VueGoogleAutocomplete
         }
     }
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<form @submit.prevent="calculate(adrese)">-->
-<!--<div class="row">-->
-<!--<vue-google-autocomplete-->
-<!--id="map"-->
-<!--classname="form-control"-->
-<!--placeholder="Punctul de plecare"-->
-<!--v-on:placechanged="getAddressData"-->
-<!--country="ro"-->
-
-<!--&gt;-->
-<!--</vue-google-autocomplete>-->
-
-<!--<h1>{{adrese}}</h1>-->
-<!--</div>-->
-<!--<hr size="30">-->
-<!--<div class="row">-->
-<!--&lt;!&ndash;<label for="adresa2">Adresa A</label>&ndash;&gt;-->
-<!--&lt;!&ndash;<input type="text" class="form-control" id="adresa2" v-model="address.adr2"/>&ndash;&gt;-->
-<!--<vue-google-autocomplete-->
-<!--id="map2"-->
-<!--classname="form-control"-->
-<!--placeholder="Adresa A"-->
-<!--v-on:placechanged="getAddressData"-->
-<!--country="ro"-->
-<!--&gt;-->
-<!--</vue-google-autocomplete>-->
-<!--</div>-->
-<!--<div class="row">-->
-<!--<label for="adresa3">Adresa B</label>-->
-<!--<input type="text" class="form-control" id="adresa3" v-model="address.adr3" />-->
-<!--</div>-->
-<!--<hr size="30">-->
-<!--<div class="form-group">-->
-<!--<button class="btn btn-outline-primary">-->
-<!--Calculeaza-->
-<!--</button>-->
-<!--</div>-->
-<!--<h1>{{distance}}</h1>-->
-<!--<div style="width: 100%" v-if="me">-->
-<!--<embed id="myFrame" style="width: 100%; height: 400px" :src="-->
-<!--'https://www.google.com/maps/embed/v1/directions?key=AIzaSyAGWiEqLEilt-TAYuij2_wA5CXBHwofvE8&origin='-->
-<!--+ startingPoint[0].position.lat + ','-->
-<!--+ startingPoint[0].position.lng +-->
-<!--'&waypoints=' + startingPoint[2].position.lat + ','-->
-<!--+ startingPoint[2].position.lng +-->
-<!--'&destination=' + startingPoint[1].position.lat + ','-->
-<!--+ startingPoint[1].position.lng"-->
-<!--frameborder="0" scrolling="no" marginheight="0" marginwidth="0">-->
-<!--</div>-->
-
-<!--</form>-->

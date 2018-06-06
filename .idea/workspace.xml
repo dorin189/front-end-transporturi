@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ebb64c1-70c3-4e15-881b-7965767fe85c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Harta/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Harta/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Soferi/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Soferi/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/test/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/Index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,13 +23,18 @@
       <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
+            <state relative-caret-position="664">
+              <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
               <folding>
+                <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#embed#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#2440#2480#0" expanded="true" />
-                <marker date="1528133320000" expanded="true" signature="1351:1371" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,10 +50,23 @@
         </entry>
       </file>
       <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Soferi/Index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="128" column="34" lean-forward="true" selection-start-line="126" selection-start-column="30" selection-end-line="128" selection-end-column="34" />
+              <folding>
+                <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
+                <element signature="e#2393#2433#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/test/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="1061">
+              <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h5#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
@@ -59,9 +80,10 @@
       <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="131" column="32" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="32" />
+            <state relative-caret-position="-334">
+              <caret line="90" column="24" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="90" selection-end-column="24" />
               <folding>
+                <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -101,8 +123,14 @@
       <find>posts</find>
       <find>Planifi</find>
       <find>originAddresses</find>
-      <find>// this.renderChart(this.datacollection, {responsive: true, maintainAspectRatio: false})</find>
       <find>locations</find>
+      <find>console</find>
+      <find>me</find>
+      <find>console.log</find>
+      <find>// this.renderChart(this.datacollection, {responsive: true, maintainAspectRatio: false})</find>
+      <find>size</find>
+      <find>info</find>
+      <find>origin</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -132,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/plugins/bulma.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
         <option value="$PROJECT_DIR$/src/pages/Transportatori/Index.vue" />
-        <option value="$PROJECT_DIR$/src/pages/Soferi/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/ParcAuto/Index.vue" />
         <option value="$PROJECT_DIR$/src/layouts/Default.vue" />
         <option value="$PROJECT_DIR$/src/routes/index.js" />
@@ -141,6 +168,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/pages/test/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/test/Index.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Soferi/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/Harta/Index.vue" />
       </list>
@@ -168,9 +196,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1440" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="1976" />
+    <option name="y" value="110" />
     <option name="width" value="1920" />
     <option name="height" value="1057" />
   </component>
@@ -244,24 +272,6 @@
             <path>
               <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
               <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="vue-router" type="462c0819:PsiDirectoryNode" />
-              <item name="types" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
@@ -359,15 +369,15 @@
       <workItem from="1525088772583" duration="40175000" />
       <workItem from="1526117690275" duration="30397000" />
       <workItem from="1527661530185" duration="32930000" />
-      <workItem from="1527943614389" duration="39217000" />
+      <workItem from="1527943614389" duration="70403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142719000" />
+    <option name="totallyTimeSpent" value="173905000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1920" height="1057" extended-state="6" />
+    <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -378,7 +388,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946752" weight="0.328125" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.496875" visible="true" weight="0.19275825" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496875" weight="0.32063773" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969216" />
@@ -401,7 +411,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -566,16 +576,6 @@
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="e#2313#2353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Soferi/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="78" column="17" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="17" />
-          <folding>
-            <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -757,10 +757,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-334">
+          <caret line="90" column="24" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="90" selection-end-column="24" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/test/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="1061">
+          <caret line="96" column="40" selection-start-line="96" selection-start-column="40" selection-end-line="96" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
@@ -770,25 +781,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
+    <entry file="file://$PROJECT_DIR$/src/pages/Soferi/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="131" column="32" selection-start-line="131" selection-start-column="19" selection-end-line="131" selection-end-column="32" />
+        <state relative-caret-position="532">
+          <caret line="128" column="34" lean-forward="true" selection-start-line="126" selection-start-column="30" selection-end-line="128" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
+            <element signature="e#2393#2433#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="142" column="41" selection-start-line="142" selection-start-column="41" selection-end-line="142" selection-end-column="41" />
+        <state relative-caret-position="664">
+          <caret line="220" column="61" selection-start-line="220" selection-start-column="61" selection-end-line="220" selection-end-column="61" />
           <folding>
+            <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#embed#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#2440#2480#0" expanded="true" />
-            <marker date="1528133320000" expanded="true" signature="1351:1371" ph="..." />
           </folding>
         </state>
       </provider>
