@@ -3,32 +3,6 @@
 
     <v-layout>
       <div>
-          <!--<ul>-->
-              <!--<li>Sofer: Iosifescu Dorin</li>-->
-              <!--<li>Masina: Vw Skoda</li>-->
-              <!--<li>-->
-                  <!--<button @click="calculate()" class="btn btn-info" style="margin-top: 10px;" v-show="!isGenerate">Calculeaza Routa</button>-->
-              <!--</li>-->
-              <!--<form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">-->
-                  <!--<div class="row">-->
-                      <!--<div class="form-group" style="margin-right: 30px">-->
-                          <!--<label for="name" style="margin-right: 10px">Link harta:</label>-->
-                          <!--<input type="text" class="form-control" id="name" v-model="info.link">-->
-                      <!--</div>-->
-                      <!--<div class="form-group" style="margin-right: 30px">-->
-                          <!--<label for="km" style="margin-right: 10px">Km:</label>-->
-                          <!--<input type="text" class="form-control" id="km" v-model="info.km">-->
-                      <!--</div>-->
-                      <!--<button class="btn btn-success" @click="sendData(info)">Trimite email catre sofer</button>-->
-                  <!--</div>-->
-              <!--</form>-->
-          <!--</ul>-->
-          <!--<div style="width: 100%">-->
-              <!--<iframe id="myFrame" class="myIframe" ref="myIframe" style="width: 100%; height: 340px" :src="googleMapsEmbeded"-->
-                      <!--frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>-->
-
-          <!--</div>-->
-
           <table class="table table-striped">
               <thead>
               <tr>
@@ -37,6 +11,9 @@
                   </th>
                   <th>
                       Prenume Sofer
+                  </th>
+                  <th>
+                      Denumire Auto
                   </th>
               </tr>
               </thead>
@@ -49,13 +26,17 @@
                       {{post.prenume}}
                   </td>
                   <td>
-                      <button @click="calculate(post.id)" class="btn btn-info" style="margin-top: 10px;">Calculeaza Routa</button>
+                      {{post.parc.denumire_auto}}
                   </td>
+
                   <td>
+                      <button @click="calculate(post)" class="btn btn-info" style="margin-top: 10px;">Calculeaza Routa</button>
                   </td>
+                  <br>
               </tr>
               </tbody>
           </table>
+          <hr>
           <form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">
               <div class="row">
                   <div class="form-group" style="margin-right: 30px">
@@ -101,6 +82,9 @@
                     origin: null,
                     isGenerate: false,
                     info: {},
+                    selectedDriver: null,
+                    selectedAutoKm: null,
+                    driverId: null
                }
        },
 
@@ -112,17 +96,21 @@
         },
 
         methods: {
-            calculate(id) {
+            calculate(post) {
                 var vm = this;
+                vm.selectedDriver = post.email;
+                vm.selectedAutoKm = post.parc.revizie;
+                vm.driverId = post.id;
+                var id = post.id;
                 axios.get(process.env.API_LOCATION + GET_COMENZI_BY_DRIVE + id)
                     .then(function (response) {
-                        console.log(response);
                         if(response.data) {
                             localStorage.setItem('aaa', JSON.stringify(response.data));
                             vm.getComenziSofer();
                         }
                     })
             },
+
             getComenziSofer() {
                 var a = localStorage.getItem('aaa');
                 var vm = this;
@@ -230,7 +218,15 @@
             },
 
             sendData(info) {
-                axios.post(process.env.API_LOCATION + POST_INFO, info)
+
+                var data = {
+                    'email': this.selectedDriver,
+                    'linkMap': info.link,
+                    'driverId': this.driverId,
+                    'revizie': this.selectedAutoKm - info.km
+                }
+
+                axios.post(process.env.API_LOCATION + POST_INFO, data)
                     .then(function (response) {
                         console.log(response);
                     })

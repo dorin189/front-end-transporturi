@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ebb64c1-70c3-4e15-881b-7965767fe85c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Harta/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Harta/Index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="121" column="49" lean-forward="true" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+            <state relative-caret-position="414">
+              <caret line="225" column="28" selection-start-line="225" selection-start-column="28" selection-end-line="225" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
@@ -32,6 +31,7 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#2440#2480#0" expanded="true" />
+                <element signature="e#7844#7914#0" />
               </folding>
             </state>
           </provider>
@@ -128,6 +128,7 @@
       <find>size</find>
       <find>info</find>
       <find>origin</find>
+      <find>isGenerate</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -194,10 +195,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="1976" />
-    <option name="y" value="110" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="x" value="1440" />
+    <option name="width" value="958" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -366,12 +366,12 @@
       <workItem from="1525088772583" duration="40175000" />
       <workItem from="1526117690275" duration="30397000" />
       <workItem from="1527661530185" duration="32930000" />
-      <workItem from="1527943614389" duration="72404000" />
+      <workItem from="1527943614389" duration="76949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175906000" />
+    <option name="totallyTimeSpent" value="180451000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
@@ -408,7 +408,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -791,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="121" column="49" lean-forward="true" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+        <state relative-caret-position="414">
+          <caret line="225" column="28" selection-start-line="225" selection-start-column="28" selection-end-line="225" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#button#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
@@ -803,6 +803,7 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#2440#2480#0" expanded="true" />
+            <element signature="e#7844#7914#0" />
           </folding>
         </state>
       </provider>
