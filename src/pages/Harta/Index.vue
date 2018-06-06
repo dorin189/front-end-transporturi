@@ -98,9 +98,9 @@
                     shortDistance: [],
                     posts: {},
                     googleMapsEmbeded: null,
-                    origin: [],
+                    origin: null,
                     isGenerate: false,
-                    link: {}
+                    info: {},
                }
        },
 
@@ -110,18 +110,6 @@
                     next(vm => (vm.posts = response.data))
                 })
         },
-
-
-
-        // beforeRouteEnter: function (to, from, next) {
-        //     axios.get(process.env.API_LOCATION + GET_COMENZI_IS_ORDER)
-        //         .then(response =>
-        //             next( vm => localStorage.setItem('aaa', JSON.stringify(response.data),
-        //                 console.log(response.data))
-        //             )
-        //         )
-        // },
-
 
         methods: {
             calculate(id) {
@@ -167,7 +155,8 @@
                         if (status == 'OK') {
                             vm.shortDistance = [];
                             var origins = response.originAddresses;
-                            this.origin.push(origins);
+                            vm.origin = origins;
+                            console.log(vm.origin);
                             var destinations = response.destinationAddresses;
                             for (var i = 0; i < origins.length; i++) {
                                 var results = response.rows[i].elements;
@@ -216,10 +205,8 @@
                             return arr;
                         }
 
-                        var start = this.origin;
-                        var startA = JSON.stringify(start[0]);
-                        var startTransform = startA.join("");
-                        console.log(startTransform);
+                        console.log(this.origin[0]);
+                        var start = vm.origin[0];
                         var startTransformToString = start.replace(/\s*,\s*/g , "+");
 
                         var points = wayPoints();
