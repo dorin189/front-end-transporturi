@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <router-link
         class="navbar-brand"
-        :to="{ name: 'home.index' }"
+        :to="{ name: 'dashboard' }"
       >
-        Aplicatie
+        <i class="fa fa-dashboard" style="font-size:38px;color:#a10404"></i>
       </router-link>
 
       <button
@@ -22,13 +22,13 @@
       >
         <ul class="navbar-nav mr-auto">
           <router-link
-            :to="{ name: 'home.index' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
+                  :to="{ name: 'dashboard' }"
+                  active-class="active"
+                  class="nav-item"
+                  tag="li"
           >
             <a class="nav-link">
-              Home
+              Dashboard
             </a>
           </router-link>
           <router-link
@@ -41,37 +41,17 @@
               Comenzi
             </a>
           </router-link>
-          <router-link
-                  :to="{ name: 'dorin' }"
-                  active-class="active"
-                  class="nav-item"
-                  tag="li"
-          >
-            <a class="nav-link">
-              test
-            </a>
-          </router-link>
 
           <!--<router-link-->
-                  <!--:to="{ name: 'account.index' }"-->
+                  <!--:to="{ name: 'transportatori' }"-->
                   <!--active-class="active"-->
                   <!--class="nav-item"-->
                   <!--tag="li"-->
           <!--&gt;-->
             <!--<a class="nav-link">-->
-              <!--Date clienti-->
+              <!--Transportatori-->
             <!--</a>-->
           <!--</router-link>-->
-          <router-link
-                  :to="{ name: 'transportatori' }"
-                  active-class="active"
-                  class="nav-item"
-                  tag="li"
-          >
-            <a class="nav-link">
-              Transportatori
-            </a>
-          </router-link>
           <router-link
                   :to="{ name: 'planificare' }"
                   active-class="active"

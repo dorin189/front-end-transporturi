@@ -116,25 +116,34 @@
                 var vm = this;
                 var locations = JSON.parse(a);
 
-                console.log(locations[0].comand);
-                var size = Object.keys(this.posts).length;
                 var pozition = [];
                 var scope = {};
-                for(var i = 1 ; i <= locations.length-1; i++) {
-                    scope['destination' + i] = new google.maps.LatLng(locations[i].comand.lat_adresa_destinatar, locations[i].comand.lng_adresa_destinatar);
+
+                console.log(locations.length);
+
+                if(locations.length == 1) {
+                    scope['destination' + 1] = new google.maps.LatLng(locations[0].comand.lat_adresa_destinatar, locations[0].comand.lng_adresa_destinatar);
+                } else if (locations.length > 1){
+                    for(var i = 0 ; i <= locations.length-1 ; i++) {
+                        var a = i+1;
+                        scope['destination' + a] = new google.maps.LatLng(locations[i].comand.lat_adresa_destinatar, locations[i].comand.lng_adresa_destinatar);
+                    }
                 }
+
                 var origin1 = new google.maps.LatLng(locations[0].comand.lat_adresa_client, locations[0].comand.lng_adresa_client);
-                console.log("location" + locations[0].comand);
                 var service = new google.maps.DistanceMatrixService();
 
                 function getDestionation() {
                     var lungime = Object.keys(scope).length;
+
                     var arr = [];
                     for(var i = 1; i <= lungime; i++) {
                         arr.push(scope['destination' + i]);
                     }
+                    console.log(arr);
                     return arr;
                 }
+
 
                 service.getDistanceMatrix(
                     {
@@ -184,10 +193,14 @@
                          */
                         function wayPoints() {
                             var arr = [];
-                            for(var i =0 ; i < destinationOrder.length - 1; i++) {
-                                if(i == 0) {
+                            console.log(destinationOrder.length);
+                            for(var i = 0 ; i < destinationOrder.length - 1; i++) {
+                                if(i == 0 && destinationOrder.length > 2) {
                                     arr.push("&waypoints=" + destinationOrder[i] + "|");
-                                } else if(i < destinationOrder.length - 2) {
+                                } else if (i == 0 && destinationOrder.length == 2) {
+                                    arr.push("&waypoints=" + destinationOrder[i]);
+                                }
+                                else if(i < destinationOrder.length - 2) {
                                     arr.push(destinationOrder[i] + "|")
                                 }
                                 else {
@@ -201,6 +214,8 @@
                         var startTransformToString = start.replace(/\s*,\s*/g , "+");
 
                         var points = wayPoints();
+
+
                         var transformToString = points.join("");
                         var waypointsTransformToString = transformToString.replace(/\s*,\s*/g , "+");
 

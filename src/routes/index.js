@@ -6,22 +6,10 @@
  */
 
 export default [
-  // Home
   {
-    path: '/home',
-    name: 'home.index',
-    component: () => import('@/pages/Home/Index'),
-
-    // If the user needs to be authenticated to view this page
-    meta: {
-      auth: true,
-    },
-  },
-
-  {
-    path: '/test',
-    name: 'dorin',
-    component: () => import('@/pages/test/Index'),
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('@/pages/Dashboard/Index'),
 
       // If the user needs to be authenticated to view this page
     meta: {

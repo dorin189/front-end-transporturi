@@ -1,5 +1,29 @@
 <template>
     <v-layout>
+            <div class="container">
+                <div class="chart">
+                    <h2>Incasare din livrari pentru fiecare sofer</h2>
+                    <line-chart
+                            :chart-data="datacollection"
+                            :options="{responsive: false, maintainAspectRatio: false}"
+                            :width="600"
+                            :height="200"
+                    >
+                    </line-chart>
+                </div>
+                <div class="chart">
+                    <h2>Revizie masini</h2>
+                    <bar-chart
+                            :chart-data="dataServiceCollection"
+                            :options="{responsive: false, maintainAspectRatio: false}"
+                            :width="600"
+                            :height="200"
+                    >
+                    </bar-chart>
+                </div>
+
+            </div>
+            <hr>
             <div id="map" style="height: 500px">
             </div>
             <hr>
@@ -15,15 +39,6 @@
                 <img src="http://maps.google.com/mapfiles/ms/icons/purple-dot.png" width="27" height="27" />
                 Locatii comenzi neprocesate
             </h5>
-            <div>
-                <line-chart
-                        :chart-data="datacollection"
-                        :options="{responsive: false, maintainAspectRatio: false}"
-                        :width="600"
-                        :height="200"
-                >
-                </line-chart>
-            </div>
     </v-layout>
 </template>
 
@@ -34,35 +49,73 @@
     import VLayout from '@/layouts/Default';
     import axios from 'axios';
     import LineChart from './LineChart.js';
+    import BarChart from './BarChart.js';
 
 
     const GET_COMENZI_INFO = '/comenzi/info';
 
+    const GET_SOFERI = '/soferi';
+    const GET_DASHBOARD_REVIZIE = '/dashboard/revizie';
+    const GET_DASHBOARD_SOFERI = '/dashboard/soferi';
+
+
 
     export default {
-        name: 'dorin',
+        name: 'dashboard',
         data() {
             return {
                 address: '',
                 posts: [],
                 beaches: [],
-                datacollection: null
+                datacollection: null,
+                dataServiceCollection: null,
+                gradient: null,
+                gradient2: null
             }
         },
         components: {
             VLayout,
-            LineChart
+            LineChart,
+            BarChart
         },
         mounted () {
-            this.fillData()
+            this.aaa();
         },
         methods: {
-            fillData () {
+            aaa () {
+                var vm = this;
+                axios.get(process.env.API_LOCATION + GET_DASHBOARD_REVIZIE)
+                    .then(function (response) {
+                        vm.dashboard(response.data);
+                    });
+                axios.get(process.env.API_LOCATION + GET_DASHBOARD_SOFERI)
+                    .then(function (response) {
+                        vm.fillData(response.data)
+                    });
+            },
+            fillData (data) {
+                var info = data;
+                var soferId = [];
+                for(var i = 0; i < info.length; i++) {
+                    soferId.push(info[i].sofer_id);
+                }
+
+                var soferObj = {};
+                var a = 0;
+
+                for(var i = 0; i< info.length; i++) {
+                    if(soferId[i] === info[i].sofer_id) {
+                        a++;
+                        soferObj = {
+                        }
+                    }
+                }
+
                 this.datacollection = {
                     labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
                     datasets: [
                         {
-                            label: 'Data One',
+                            label: 'Incasare per masina',
                             backgroundColor: ['#f87979', 'blue', 'yellow'],
                             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
                         }
@@ -79,6 +132,42 @@
                     ]
                 }
             },
+            dashboard (data) {
+                var info = data;
+                var responseLength = Object.keys(data).length;
+
+                function getNumarInmatriculare() {
+                    var arr = [];
+                    for(var i = 0 ; i <= responseLength - 1; i++) {
+                        arr.push(info[i].numar_inmatriculare);
+                    }
+                    return arr;
+                }
+
+                function getKmRevizie() {
+                    var arr = [];
+                    for(var i = 0 ; i <= responseLength - 1; i++) {
+                        arr.push(info[i].revizie);
+                    }
+                    return arr;
+                }
+
+                this.dataServiceCollection = {
+                    labels: getNumarInmatriculare(),
+                    datasets: [
+                        {
+                            label: 'Km pana la revizie',
+                            borderColor: '#a10404',
+                            pointBackgroundColor: 'white',
+                            borderWidth: 1,
+                            pointBorderColor: 'white',
+                            backgroundColor: '#00e5ee',
+                            data: getKmRevizie()
+                        }
+                    ]
+                }
+            },
+
             getRandomInt () {
                 return Math.floor(Math.random() * (50 - 5 + 1)) + 5
             }
@@ -97,6 +186,7 @@
                 locatii = response.data;
                 setMarkers(map, locatii);
             });
+
     }
 
     function setMarkers(map, locatii) {
@@ -158,7 +248,5 @@
 
     }
         google.maps.event.addDomListener(window, "load", initialize);
-
-
 
 </script>
