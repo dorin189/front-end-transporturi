@@ -97,7 +97,6 @@
             fillData (data) {
 
                 var info = data;
-                console.log(info);
                 var soferId = [];
                 for(var i = 0; i < info.length; i++) {
                     soferId.push(info[i].sofer_id);
@@ -201,10 +200,6 @@
                     ]
                 }
             },
-
-            getRandomInt () {
-                return Math.floor(Math.random() * (50 - 5 + 1)) + 5
-            }
         }
     };
 
@@ -246,36 +241,74 @@
             anchor: new google.maps.Point(0, 32)
         };
 
+        var image3 = {
+
+            url: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(26, 32),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(0, 32)
+        };
+
+
         for (var i = 0; i < locatii.length; i++) {
             var a = Object.values(locatii[i]);
             var beach = a;
+            if(locatii[i].is_asigned !== 1) {
+                for(var b = 0; b < 2; b++) {
+                    if (b === 0) {
+                        var first = {
+                            lat: parseFloat(beach[1]),
+                            lng: parseFloat(beach[2])
+                        };
 
-            for(var b = 0; b < 2; b++) {
-                // console.log(beach);
-                if(b === 0) {
-                    var first = {
-                        lat: parseFloat(beach[1]),
-                        lng: parseFloat(beach[2])
-                    };
+                    } else {
+                        var second = {
+                            lat: parseFloat(beach[4]),
+                            lng: parseFloat(beach[5])
+                        };
 
-                    var img1 = image;
-                } else  {
-                    var second = {
-                        lat: parseFloat(beach[4]),
-                        lng: parseFloat(beach[5])
-                    };
+                    }
 
-                    var img2 = image2;
+                    var marker = new google.maps.Marker({
+                        // position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
+                        position: {lat: b === 0 ? first.lat : second.lat, lng: b === 0 ? first.lng : second.lng},
+                        map: map,
+                        icon: image3
+                    });
                 }
+            } else {
+                for(var b = 0; b < 2; b++) {
+                    // console.log(beach);
+                    if(b === 0) {
+                        var first = {
+                            lat: parseFloat(beach[1]),
+                            lng: parseFloat(beach[2])
+                        };
 
-                var marker = new google.maps.Marker({
-                    // position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
-                    position: {lat: b === 0 ? first.lat : second.lat, lng: b === 0 ? first.lng : second.lng },
-                    map: map,
-                    icon: b === 0 ? img1 : img2,
-                });
+                        var img1 = image;
+                    } else  {
+                        var second = {
+                            lat: parseFloat(beach[4]),
+                            lng: parseFloat(beach[5])
+                        };
 
+                        var img2 = image2;
+                    }
+
+                    var marker = new google.maps.Marker({
+                        // position: {lat: parseFloat(beach[1]), lng: parseFloat(beach[2])},
+                        position: {lat: b === 0 ? first.lat : second.lat, lng: b === 0 ? first.lng : second.lng },
+                        map: map,
+                        icon: b === 0 ? img1 : img2,
+                    });
+
+                }
             }
+
+
 
         }
 
