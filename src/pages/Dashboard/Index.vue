@@ -2,7 +2,7 @@
     <v-layout>
             <div class="container">
                 <div class="chart">
-                    <h2>Incasare din livrari pentru fiecare sofer</h2>
+                    <h2>Incasare din livrari pentru fiecare sofer(ron)</h2>
                     <line-chart
                             :chart-data="datacollection"
                             :options="{responsive: false, maintainAspectRatio: false}"
@@ -54,9 +54,10 @@
 
     const GET_COMENZI_INFO = '/comenzi/info';
 
-    const GET_SOFERI = '/soferi';
     const GET_DASHBOARD_REVIZIE = '/dashboard/revizie';
     const GET_DASHBOARD_SOFERI = '/dashboard/soferi';
+
+    const PRET_COMANDA = 25;
 
 
 
@@ -79,10 +80,10 @@
             BarChart
         },
         mounted () {
-            this.aaa();
+            this.prepare();
         },
         methods: {
-            aaa () {
+            prepare () {
                 var vm = this;
                 axios.get(process.env.API_LOCATION + GET_DASHBOARD_REVIZIE)
                     .then(function (response) {
@@ -94,41 +95,74 @@
                     });
             },
             fillData (data) {
+
                 var info = data;
+                console.log(info);
                 var soferId = [];
                 for(var i = 0; i < info.length; i++) {
                     soferId.push(info[i].sofer_id);
                 }
 
-                var soferObj = {};
-                var a = 0;
+                var count = soferId.reduce(function (acc, curr) {
+                    if (typeof acc[curr] == 'undefined') {
+                        acc[curr] = 1;
+                    } else {
+                        acc[curr] += 1;
+                    }
 
-                for(var i = 0; i< info.length; i++) {
-                    if(soferId[i] === info[i].sofer_id) {
-                        a++;
-                        soferObj = {
+                    return acc;
+                }, {});
+
+
+                var data = {};
+                var arr = [];
+                for (var key in count) {
+                    for(var i = 0; i < info.length; i++) {
+                        if (count.hasOwnProperty(key)) {
+                            if(key == info[i].sofer_id) {
+                                if(data.idSofer == info[i].sofer_id) {
+                                    continue;
+                                }
+                                data = {
+                                    'idSofer': info[i].sofer_id,
+                                    'numeSofer': info[i].sofer.nume + ' ' + info[i].sofer.prenume,
+                                    'numarComenzi': count[key]
+                                };
+
+                                arr.push(data);
+
+                            }
                         }
                     }
                 }
 
+
+                function getNume() {
+                    var data = [];
+                    for(var i = 0; i < arr.length; i++) {
+                        data.push(arr[i].numeSofer);
+                    }
+
+                    return data;
+                }
+
+                function getPretComenzi() {
+                    var data = [];
+                    for(var i = 0; i < arr.length; i++) {
+                        data.push(arr[i].numarComenzi * PRET_COMANDA);
+                    }
+
+                    return data;
+                }
+
                 this.datacollection = {
-                    labels: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
+                    labels: getNume(),
                     datasets: [
                         {
                             label: 'Incasare per masina',
                             backgroundColor: ['#f87979', 'blue', 'yellow'],
-                            data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+                            data: getPretComenzi()
                         }
-                        // }, {
-                        //     label: 'Data One',
-                        //     backgroundColor: '#f87979',
-                        //     data: [this.getRandomInt(), this.getRandomInt()]
-                        // },
-                        // {
-                        //     label: 'Data One',
-                        //     backgroundColor: '#f87979',
-                        //     data: [this.getRandomInt(), this.getRandomInt()]
-                        // }
                     ]
                 }
             },
@@ -217,7 +251,7 @@
             var beach = a;
 
             for(var b = 0; b < 2; b++) {
-                console.log(beach);
+                // console.log(beach);
                 if(b === 0) {
                     var first = {
                         lat: parseFloat(beach[1]),

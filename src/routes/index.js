@@ -28,16 +28,6 @@ export default [
     },
   },
 
-  // Date clienti
-  {
-    path: '/transportatori',
-    name: 'transportatori',
-    component: () => import('@/pages/Transportatori/Index'),
-
-    meta: {
-    },
-  },
-
   {
     path: '/parc-auto',
     name: 'parcauto',

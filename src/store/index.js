@@ -10,7 +10,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
-// import * as VueGoogleMaps from 'vue2-google-maps';
 
 
 // Modules
