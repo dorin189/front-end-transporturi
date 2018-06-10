@@ -3,7 +3,7 @@
     <v-layout>
         <v-card contextual-style="dark">
       <span slot="header">
-        Date transportatori
+        Informatii despre comenzi
       </span>
             <div slot="body">
                 <button type="button" class="btn btn-info mb-4" @click="openModal()" >Adauga Comanda</button>

@@ -2,66 +2,72 @@
 <template>
 
     <v-layout>
-      <div>
-          <table class="table table-striped">
-              <thead>
-              <tr>
-                  <th>
-                      Nume Sofer
-                  </th>
-                  <th>
-                      Prenume Sofer
-                  </th>
-                  <th>
-                      Denumire Auto
-                  </th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr v-for="post in posts" :key="post.id">
-                  <td>
-                      {{post.nume}}
-                  </td>
-                  <td>
-                      {{post.prenume}}
-                  </td>
-                  <td>
-                      {{post.parc.denumire_auto}}
-                  </td>
+        <v-card contextual-style="dark">
+            <span slot="header">
+            Informatii despre comenzi
+            </span>
+            <div slot="body">
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                      <th>
+                          Nume Sofer
+                      </th>
+                      <th>
+                          Prenume Sofer
+                      </th>
+                      <th>
+                          Denumire Auto
+                      </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr v-for="post in posts" :key="post.id">
+                      <td>
+                          {{post.nume}}
+                      </td>
+                      <td>
+                          {{post.prenume}}
+                      </td>
+                      <td>
+                          {{post.parc.denumire_auto}}
+                      </td>
 
-                  <td>
-                      <button @click="calculate(post)" class="btn btn-info" style="margin-top: 10px;">Calculeaza Routa</button>
-                  </td>
-                  <br>
-              </tr>
-              </tbody>
-          </table>
-          <hr>
-          <form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">
-              <div class="row">
-                  <div class="form-group" style="margin-right: 30px">
-                      <label for="name" style="margin-right: 10px">Link harta:</label>
-                      <input type="text" class="form-control" id="name" v-model="info.link">
+                      <td>
+                          <button @click="calculate(post)" class="btn btn-info" style="margin-top: 10px;">Calculeaza Routa</button>
+                      </td>
+                      <br>
+                  </tr>
+                  </tbody>
+                </table>
+                <hr>
+                <form v-if="isGenerate" class="form-inline" style="margin-top: 20px; margin-bottom: 20px;">
+                  <div class="row">
+                      <div class="form-group" style="margin-right: 30px">
+                          <label for="name" style="margin-right: 10px">Link harta:</label>
+                          <input type="text" class="form-control" id="name" v-model="info.link">
+                      </div>
+                      <div class="form-group" style="margin-right: 30px">
+                          <label for="km" style="margin-right: 10px">Km:</label>
+                          <input type="text" class="form-control" id="km" v-model="info.km">
+                      </div>
+                      <button class="btn btn-success" @click="sendData(info)">Trimite email catre sofer</button>
                   </div>
-                  <div class="form-group" style="margin-right: 30px">
-                      <label for="km" style="margin-right: 10px">Km:</label>
-                      <input type="text" class="form-control" id="km" v-model="info.km">
-                  </div>
-                  <button class="btn btn-success" @click="sendData(info)">Trimite email catre sofer</button>
-              </div>
-          </form>
-          <div style="width: 100%">
-              <iframe id="myFrame" class="myIframe" ref="myIframe" style="width: 100%; height: 340px" :src="googleMapsEmbeded"
-                      frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-
-          </div>
-      </div>
+                </form>
+                <div style="width: 100%">
+                  <iframe id="myFrame" class="myIframe" ref="myIframe" style="width: 100%; height: 340px" :src="googleMapsEmbeded"
+                          frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                  </iframe>
+                </div>
+            </div>
+        </v-card>
     </v-layout>
 </template>
 
 <script>
     /* eslint-disable */
     import VLayout from '@/layouts/Default';
+    import VCard from '@/components/Card';
     import axios from 'axios';
 
     const GET_COMENZI_IS_ORDER = '/comenzi/is-order';
@@ -256,6 +262,7 @@
 
         components: {
             VLayout,
+            VCard
         }
     }
 </script>

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ebb64c1-70c3-4e15-881b-7965767fe85c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/pages/Dashboard/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Dashboard/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/Default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/Default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Harta/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Harta/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ParcAuto/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ParcAuto/Index.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,26 +18,107 @@
     <favorites_list name="vue-2-boilerplate" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/Dashboard/Index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="258" column="38" selection-start-line="258" selection-start-column="38" selection-end-line="258" selection-end-column="38" />
-              <folding>
-                <element signature="n#style#0;n#h5#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#1;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#2;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="494">
+                  <caret line="58" column="90" selection-start-line="58" selection-start-column="90" selection-end-line="58" selection-end-column="90" />
+                  <folding>
+                    <element signature="n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" />
+                    <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="e#2231#2271#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/Dashboard/Index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="294">
+                  <caret line="258" column="45" lean-forward="true" selection-start-line="258" selection-start-column="45" selection-end-line="258" selection-end-column="45" />
+                  <folding>
+                    <element signature="n#style#0;n#h5#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#h5#1;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#h5#2;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Card.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/components/Card.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1102">
+                  <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Default.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+                  <folding>
+                    <element signature="n#style#0;n#i#0;n#router-link#0;n#nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/ParcAuto/Index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="57">
+                  <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="6" selection-end-column="13" />
+                  <folding>
+                    <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/pages/ParcAuto/Index.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="38">
+                  <caret line="2" column="39" lean-forward="true" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#2313#2353#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new Vue</find>
       <find>localhost</find>
       <find>success</find>
       <find>API_CLIENT_ID</find>
@@ -64,6 +148,7 @@
       <find>isGenerate</find>
       <find>dorin</find>
       <find>console.l</find>
+      <find>Plani</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -95,20 +180,20 @@
         <option value="$PROJECT_DIR$/src/pages/test/LineChart.js" />
         <option value="$PROJECT_DIR$/src/pages/test/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/test/Index.vue" />
-        <option value="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/layouts/Default.vue" />
         <option value="$PROJECT_DIR$/src/assets/stylus/app.styl" />
-        <option value="$PROJECT_DIR$/src/pages/Harta/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/Dashboard/BarChart.js" />
         <option value="$PROJECT_DIR$/src/pages/Dashboard/LineChart.js" />
         <option value="$PROJECT_DIR$/src/store/modules/auth/state.js" />
         <option value="$PROJECT_DIR$/src/store/modules/auth/actions.js" />
         <option value="$PROJECT_DIR$/src/store/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/ParcAuto/Index.vue" />
         <option value="$PROJECT_DIR$/src/pages/Soferi/Index.vue" />
         <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/pages/Dashboard/Index.vue" />
+        <option value="$PROJECT_DIR$/src/layouts/Default.vue" />
+        <option value="$PROJECT_DIR$/src/pages/ParcAuto/Index.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Comenzi/Index.vue" />
+        <option value="$PROJECT_DIR$/src/pages/Harta/Index.vue" />
       </list>
     </option>
   </component>
@@ -219,6 +304,18 @@
               <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
               <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="mixins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -232,7 +329,28 @@
               <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="Comenzi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Harta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="front-end-transporturi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="ParcAuto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="front-end-transporturi" type="b2602c69:ProjectViewProjectNode" />
@@ -297,26 +415,26 @@
       <workItem from="1525088772583" duration="40175000" />
       <workItem from="1526117690275" duration="30397000" />
       <workItem from="1527661530185" duration="32930000" />
-      <workItem from="1527943614389" duration="96050000" />
+      <workItem from="1527943614389" duration="96625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199552000" />
+    <option name="totallyTimeSpent" value="200127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005325" side_tool="true" weight="0.328125" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50106496" side_tool="true" weight="0.3273632" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" sideWeight="0.503125" side_tool="true" weight="0.19275825" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946752" weight="0.3273632" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49893504" weight="0.3273632" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.496875" visible="true" weight="0.2140575" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.496875" weight="0.2140575" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32935324" />
@@ -343,13 +461,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Card.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/axios.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -450,17 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-334">
-          <caret line="90" column="24" selection-start-line="11" selection-start-column="14" selection-end-line="90" selection-end-column="24" />
-          <folding>
-            <element signature="n#table#0;n#div#0;n#v-card#0;n#v-layout#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -482,16 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#router-link#0;n#nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Dashboard/BarChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -503,22 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1273">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -597,13 +671,6 @@
           <folding>
             <element signature="e#3166#3206#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ParcAuto/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="122" column="18" lean-forward="true" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -749,11 +816,63 @@
     <entry file="file://$PROJECT_DIR$/src/pages/Dashboard/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="258" column="38" selection-start-line="258" selection-start-column="38" selection-end-line="258" selection-end-column="38" />
+          <caret line="258" column="45" lean-forward="true" selection-start-line="258" selection-start-column="45" selection-end-line="258" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#h5#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#1;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#2;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Card.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/Default.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#router-link#0;n#nav#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Comenzi/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#4;n#form#0;n#section#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ParcAuto/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Harta/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="58" column="90" selection-start-line="58" selection-start-column="90" selection-end-line="58" selection-end-column="90" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#form#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#v-layout#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#2231#2271#0" expanded="true" />
           </folding>
         </state>
       </provider>

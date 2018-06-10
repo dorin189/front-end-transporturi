@@ -59,7 +59,7 @@
                   tag="li"
           >
             <a class="nav-link">
-              Planificare Route
+              Planificare Rute
             </a>
           </router-link>
           <router-link

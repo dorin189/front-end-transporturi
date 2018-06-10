@@ -5,7 +5,7 @@
         Informatii parc auto
       </span>
             <div slot="body">
-                <button type="button" class="btn btn-info mb-4" @click="openModal()">Adauga detalii automibil</button>
+                <button type="button" class="btn btn-info mb-4" @click="openModal()">Adauga detalii automobil</button>
                 <modal v-if="isVisible" @close="isVisible = false"></modal>
 
                 <table class="table table-striped">
